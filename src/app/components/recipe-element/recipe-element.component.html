@@ -1,0 +1,16 @@
+<!-- <img class="sidebar" *ngIf="recipe.thumbnail" src={{recipe.thumbnail}} alt="recipe picture" /> -->
+<div class="recipe-wrapper">
+    <button *ngIf="favorite" (click)="deleteFavoriteRecipe()" type="button" class="delete-button">
+        Delete
+      </button>
+    <div class="dish-picture" [style.background-image]="'url(' + recipe.thumbnail || '' + ')'"></div>
+    <h2 class="title">{{recipe.title}}</h2> 
+    <hr/>
+    <main class="main">
+        <div class="section-title">Ingredients:</div><div class="text-gray-500">{{recipe.ingredients}}</div>
+    </main>
+    <footer class="footer">
+        <hr/>
+        <span>Link: </span> <a href={{recipe.href}} target="_blank">External link</a>
+    </footer>
+</div>

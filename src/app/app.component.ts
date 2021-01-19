@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Recipe } from './models/recipe';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = 'my-app';
+
+export class AppComponent{
+  @Input() recipes: Recipe;
+  title = 'Recipes browser';
+
+  onRecipesFound($event: any) {
+    this.recipes = $event;
+  }
 }
